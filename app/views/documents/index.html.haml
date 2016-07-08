@@ -1,0 +1,6 @@
+- @document.each do |document|
+  %h2= link_to document.title, document
+  %p= time_ago_in_words(document.created_at)
+  %p= truncate(document.content, length: 100)
+
+= link_to "Create", new_document_path
