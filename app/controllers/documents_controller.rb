@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :find_document, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:index, :show]
 
   def index
     @document = Document.all.order("created_at DESC")
